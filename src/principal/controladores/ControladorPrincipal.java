@@ -29,6 +29,7 @@ public class ControladorPrincipal  {
         ArrayList<Producto> productos = new ArrayList<>();
         ArrayList<Pedido> pedidos = new ArrayList<>();
         
+        
         Cliente unCliente1 = new Cliente("cliente1@bar.com", "claveCliente1", "ApellidoCliente1", "NombreCliente1");        
         Cliente unCliente2 = new Cliente("cliente2@bar.com", "claveCliente2", "ApellidoCliente2", "NombreCliente2");       
         Cliente unCliente3 = new Cliente("cliente3@bar.com", "claveCliente3", "ApellidoCliente3", "NombreCliente3");
@@ -81,9 +82,36 @@ public class ControladorPrincipal  {
         Producto unProducto2 = new Producto(2, "Producto2", Categoria.PLATOPRINCIPAL, Estado.DISPONIBLE, 2.0f);
         Producto unProducto3 = new Producto(3, "Producto3", Categoria.POSTRE, Estado.DISPONIBLE, 3.0f);
         
-        productos.add(unProducto1);
-        productos.add(unProducto2);
-        productos.add(unProducto3);
+       int bandera=0;
+        for (Producto productoComparado: productos){
+           
+            if(productoComparado.equals(unProducto1)){
+            bandera++;    
+            }
+        }
+        if(bandera==0){
+            productos.add(unProducto1);
+        }
+        bandera=0;
+        for (Producto productoComparado: productos){
+           
+            if(productoComparado.equals(unProducto2)){
+            bandera++;    
+            }
+        }
+        if(bandera==0){
+            productos.add(unProducto2);
+        }
+        bandera=0;
+        for (Producto productoComparado: productos){
+           
+            if(productoComparado.equals(unProducto3)){
+            bandera++;    
+            }
+        }
+        if(bandera==0){
+            productos.add(unProducto3);
+        }
         
         System.out.println("Productos");
         System.out.println("=========");
@@ -117,12 +145,38 @@ public class ControladorPrincipal  {
         
         ArrayList<ProductoDelPedido> pdp3 = new ArrayList<>();
         pdp3.add(new ProductoDelPedido(unProducto1, 100));
-        pdp3.add(new ProductoDelPedido(unProducto2, 200));
-        Pedido unPedido3 = new Pedido(3, LocalDateTime.now(), pdp3, unCliente3);        
+        pdp3.add(new ProductoDelPedido(unProducto1, 200));
+        Pedido unPedido3 = new Pedido(3, LocalDateTime.now(), pdp3, unCliente3);
         
-        pedidos.add(unPedido1);
-        pedidos.add(unPedido2);
-        pedidos.add(unPedido3);
+        bandera=0;
+        for (Pedido pedidoComparado: pedidos){
+           
+            if(pedidoComparado.equals(unPedido1)){
+            bandera++;    
+            }
+        }
+        if(bandera==0){
+            pedidos.add(unPedido1);
+        }
+        bandera=0;
+        for (Pedido pedidoComparado: pedidos){
+           
+            if(pedidoComparado.equals(unPedido2)){
+            bandera++;    
+            }
+        }
+        if(bandera==0){
+            pedidos.add(unPedido2);
+        }
+        bandera=0;
+        for (Pedido pedidoComparado: pedidos){
+            if(pedidoComparado.equals(unPedido3)){
+            bandera++;    
+            }
+        }
+        if(bandera==0){
+            pedidos.add(unPedido3);
+        }
         
         System.out.println("Pedidos");
         System.out.println("=======");

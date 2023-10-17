@@ -93,7 +93,10 @@ public class Pedido {
     }
 
     public void asignarProductosDelPedido(ArrayList<ProductoDelPedido> ProductosDelPedido) {
-        this.productosDelPedido = ProductosDelPedido;
+        if (!ProductosDelPedido.contains(this.productosDelPedido)){
+            this.productosDelPedido = ProductosDelPedido;
+            
+        }
     }
     
     public void mostrarProductosDelPedido(){
@@ -106,5 +109,27 @@ public class Pedido {
         System.out.println("Nro: " + numero + "\nFecha: " + this.verFecha() + "\t\tHora: " + this.verHora() + "\nCliente: " + cliente.verApellido() + ", " + cliente.verNombre() + "\nEstado: " + estado +"\n\tProducto\tCantidad\n============================================\n\t\t");
         this.mostrarProductosDelPedido();
     }
-    
+    // Comparador de pedidos iguales
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 41 * hash + this.numero;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pedido other = (Pedido) obj;
+        return this.numero == other.numero;
+    }
 }

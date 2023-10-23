@@ -17,7 +17,7 @@ public class Producto {
     private Categoria categoria;
     
     public void mostrar(){
-        System.out.println("Producto: " + this.descripcion + "\nPrecio: " + this.precio + "\nCategoria: " + this.categoria + "\tVigente: " + this.estado);
+        System.out.println("Producto: " + this.descripcion + "\nPrecio:" + this.precio + "\nCategoria:" + this.categoria + " Estado:" + this.estado);
     }
     
     //toString

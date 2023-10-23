@@ -18,6 +18,24 @@ public class Pedido {
     private Estado estado;
     private Cliente cliente;
     private ArrayList<ProductoDelPedido> productosDelPedido;
+    
+    public void asignarProductosDelPedido(ProductoDelPedido producto) {
+        if (!productosDelPedido.contains(producto)){
+            this.productosDelPedido.add(producto);
+            
+        }
+    }
+    
+    public void mostrarProductosDelPedido(){
+        for (ProductoDelPedido unProducto : productosDelPedido){
+            System.out.println("\t" + unProducto.verDescripcion()+ "\t"+ unProducto.verCantidad());
+        }   
+    }
+    
+    public void mostrar(){
+        System.out.println("\n\nNro: " + numero + "\nFecha: " + this.verFecha() + "\t\tHora: " + this.verHora() + "\nCliente: " + cliente.verApellido() + ", " + cliente.verNombre() + "\nEstado: " + estado +"\n\tProducto\tCantidad\n============================================\n\t\t");
+        this.mostrarProductosDelPedido();
+    }
         
         //Constructores
    
@@ -92,23 +110,7 @@ public class Pedido {
         return productosDelPedido;
     }
 
-    public void asignarProductosDelPedido(ArrayList<ProductoDelPedido> ProductosDelPedido) {
-        if (!ProductosDelPedido.contains(this.productosDelPedido)){
-            this.productosDelPedido = ProductosDelPedido;
-            
-        }
-    }
     
-    public void mostrarProductosDelPedido(){
-        for (ProductoDelPedido unProducto:productosDelPedido){
-            System.out.println("\t" + unProducto.verDescripcion()+ "\t"+ unProducto.verCantidad());
-        }
-    }
-    
-    public void mostrar(){
-        System.out.println("Nro: " + numero + "\nFecha: " + this.verFecha() + "\t\tHora: " + this.verHora() + "\nCliente: " + cliente.verApellido() + ", " + cliente.verNombre() + "\nEstado: " + estado +"\n\tProducto\tCantidad\n============================================\n\t\t");
-        this.mostrarProductosDelPedido();
-    }
     // Comparador de pedidos iguales
 
     @Override

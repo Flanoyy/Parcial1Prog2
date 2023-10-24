@@ -20,19 +20,23 @@ public class Cliente extends Usuario{
         System.out.println(this.apellido + ", " + this.nombre + "\nCorreo:" + this.correo);
     }
 
-//    public void hacerPedido(){
-//  
-//     }
-//      
-//    public void consultarPedido(){
-//        
-//    }
-//    public void agregarProducto(){
-//    
-//    }
-//    public void quitarProducto(){
-//   
-//    }
+    public void agregarPedido(Pedido unPedido){
+        if(!listaPedidos.contains(unPedido)){ //Si no esta lo agrega
+            listaPedidos.add(unPedido);
+    }else{
+            listaPedidos.remove(unPedido);  //Si esta lo reemplaza
+            listaPedidos.add(unPedido);
+        }}
+    
+    public void cancelarPedido(Pedido unPedido){
+        if(listaPedidos.contains(unPedido))
+            listaPedidos.remove(unPedido);
+    }
+    
+    @Override
+    public ArrayList<Pedido> verPedidos(){
+        return listaPedidos;
+    }
         
     //Constructores
     public Cliente(String correo, String clave, String apellido, String nombre) {

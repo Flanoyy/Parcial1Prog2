@@ -122,7 +122,7 @@ public class ControladorPrincipalTP4 {
     */
     /*
     INICIO Segunda parte - herencia
-//    */
+    */
 //        ArrayList<Usuario> usuarios = new ArrayList<>();
 //        
 //        Usuario unCliente1 = new Cliente("cliente1@bar.com", "claveCliente1", "ApellidoCliente1", "NombreCliente1");        
@@ -354,7 +354,7 @@ public class ControladorPrincipalTP4 {
 //            System.out.println();
 //        }
 //        System.out.println();
-//    
+    
     /*
     FIN Tercera parte - herencia
     */

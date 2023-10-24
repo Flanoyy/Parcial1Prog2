@@ -6,6 +6,7 @@ package usuarios.modelos;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import pedido.modelos.Pedido;
 
 /**
  *
@@ -58,7 +59,10 @@ public abstract class Usuario {
     public void asignarApellido(String apellido) {
         this.apellido = apellido;
     }
-    //
+    
+    public abstract ArrayList<Pedido> verPedidos();
+    
+    //Equals
 
     @Override
     public int hashCode() {

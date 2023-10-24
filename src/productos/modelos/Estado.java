@@ -10,7 +10,7 @@ package productos.modelos;
  */
 public enum Estado {
     DISPONIBLE("Disponible"),
-    NO_DISPONIBLE("No Disponible");
+    NO_DISPONIBLE("No disponible");
 
     private final String valor;
     

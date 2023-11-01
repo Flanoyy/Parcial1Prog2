@@ -17,10 +17,6 @@ public class Encargado extends Usuario{
     
     //Metodos
     
-    @Override
-    public void mostrar(){
-        System.out.println(this.apellido + ", " + this.nombre + "\nCorreo:" + this.correo);
-    }
     
     @Override
     public ArrayList<Pedido> verPedidos() {

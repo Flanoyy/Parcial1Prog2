@@ -26,14 +26,14 @@ public class ControladorPrincipalGUI {
     * Se asigna un título a la ventana
     * Se hace visible la ventana
     */
-        /*establecerLookAndFeel("Nimbus");*/ 
+        establecerLookAndFeel("Nimbus");
         // PRODUCTO
-       /*
+       ///*
         VentanaAMProducto ventana = new VentanaAMProducto(null);
         ventana.setLocationRelativeTo(null);
         ventana.setTitle("Nuevo producto");
         ventana.setVisible(true);
-       */
+       //*/
         //CLIENTE
        /*
         VentanaAMCliente ventana = new VentanaAMCliente(null);

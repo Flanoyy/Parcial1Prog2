@@ -15,18 +15,18 @@ public class Cliente extends Usuario{
     ArrayList<Pedido> listaPedidos = new ArrayList<>();
 
     //Metodos
-    @Override
-    public void mostrar(){
-        System.out.println(this.apellido + ", " + this.nombre + "\nCorreo:" + this.correo);
-    }
+    
 
     public void agregarPedido(Pedido unPedido){
-        if(!listaPedidos.contains(unPedido)){ //Si no esta lo agrega
+        if(unPedido!=null){
+            if(!listaPedidos.contains(unPedido)){ //Si no esta lo agrega
             listaPedidos.add(unPedido);
-    }else{
+        }else{
             listaPedidos.remove(unPedido);  //Si esta lo reemplaza
             listaPedidos.add(unPedido);
-        }}
+            }
+        }
+    }
     
     public void cancelarPedido(Pedido unPedido){
         if(listaPedidos.contains(unPedido))

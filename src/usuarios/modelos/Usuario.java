@@ -17,8 +17,11 @@ public abstract class Usuario {
     public ArrayList<Usuario> listaUsuarios = new ArrayList<>();
     
     public void mostrar(){
-        System.out.println("Usuario:" + this.apellido + ", " + this.nombre + "\nCorreo: " + this.correo);
+        System.out.println(this.apellido + ", " + this.nombre + "\nCorreo:" + this.correo);
     }
+    
+    public abstract ArrayList<Pedido> verPedidos();
+    
     //constructor
     public Usuario(String correo, String clave, String apellido, String nombre) {
         this.correo = correo;
@@ -60,7 +63,7 @@ public abstract class Usuario {
         this.apellido = apellido;
     }
     
-    public abstract ArrayList<Pedido> verPedidos();
+    
     
     //Equals
 

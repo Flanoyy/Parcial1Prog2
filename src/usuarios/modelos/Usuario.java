@@ -6,7 +6,7 @@ package usuarios.modelos;
 
 import java.util.ArrayList;
 import java.util.Objects;
-import pedido.modelos.Pedido;
+import pedidos.modelos.Pedido;
 
 /**
  *
@@ -24,11 +24,14 @@ public abstract class Usuario {
     
     //constructor
     public Usuario(String correo, String clave, String apellido, String nombre) {
-        this.correo = correo;
-        this.clave = clave;
-        this.apellido = apellido;
-        this.nombre = nombre;
+            this.correo = correo;
+            this.clave = clave;
+            this.apellido = apellido;
+            this.nombre = nombre;
     }
+    //Metodos
+    
+    public abstract String queSoy();
     
     //ver/asignar
     public String verCorreo() {

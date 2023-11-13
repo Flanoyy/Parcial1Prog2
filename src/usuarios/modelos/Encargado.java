@@ -5,7 +5,7 @@
 package usuarios.modelos;
 
 import java.util.ArrayList;
-import pedido.modelos.Pedido;
+import pedidos.modelos.Pedido;
 
 /**
  *
@@ -27,6 +27,11 @@ public class Encargado extends Usuario{
     
     public Encargado(String correo, String clave, String apellido, String nombre) {
         super(correo, clave, apellido, nombre);
+    }
+    
+    @Override
+    public String queSoy() {
+        return "Encargado";
     }
     
 }

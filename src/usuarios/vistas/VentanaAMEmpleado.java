@@ -141,7 +141,7 @@ public class VentanaAMEmpleado extends JDialog {
         String apellido = this.txtApellido.getText().trim();
         String nombre = this.txtNombre.getText().trim();
         String clave = new String(this.passClave.getPassword());
-        Empleado unEmpleado = new Empleado(correo, clave, apellido, nombre);
+        Empleado unEmpleado = new Empleado(correo, clave, apellido, nombre, 1);
         if (!this.empleados.contains(unEmpleado))
             this.empleados.add(unEmpleado);
         

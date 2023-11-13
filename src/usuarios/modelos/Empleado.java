@@ -5,7 +5,8 @@
 package usuarios.modelos;
 
 import java.util.ArrayList;
-import pedido.modelos.Pedido;
+import java.util.Objects;
+import pedidos.modelos.Pedido;
 
 /**
  *
@@ -14,6 +15,7 @@ import pedido.modelos.Pedido;
 public class Empleado extends Usuario{
     
     private final ArrayList<Pedido> pedidoVacio = new ArrayList<>();
+    private int legajo;
     
     //Metodos
     
@@ -26,9 +28,53 @@ public class Empleado extends Usuario{
     
     //Constructor
 
-    public Empleado(String correo, String clave, String apellido, String nombre) {
+    public Empleado(String correo, String clave, String apellido, String nombre,int legajo) {
         super(correo, clave, apellido, nombre);
+        this.legajo=legajo;
         }
 
+    //Metodos
+
+    public int verLegajo() {
+        return legajo;
+    }
+
+    public void asignarLegajo(int legajo) {
+        this.legajo = legajo;
+    }
+    
+    //equals
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 41 * hash + this.legajo;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(super.equals(obj)==false){
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Empleado other = (Empleado) obj;
+            return(this.legajo == other.legajo);
+           
+        }else {
+            return super.equals(obj);
+        }       
+    }
+    
+    @Override
+    public String queSoy() {
+        return "Empleado";
+    }
     
     }

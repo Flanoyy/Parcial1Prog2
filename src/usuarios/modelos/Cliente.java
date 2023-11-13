@@ -5,7 +5,7 @@
 package usuarios.modelos;
 
 import java.util.ArrayList;
-import pedido.modelos.Pedido;
+import pedidos.modelos.Pedido;
 
 /**
  *
@@ -47,5 +47,10 @@ public class Cliente extends Usuario{
     @Override
     public String toString() {
         return "Cliente{" + "correo=" + super.verCorreo() + ", clave=" + super.verClave() + ", nombre=" + super.verNombre() + ", apellido=" + super.verApellido() + ", listaPedidos=" + listaPedidos + '}';
+    }
+
+    @Override
+    public String queSoy() {
+        return "Cliente";
     }
 }
